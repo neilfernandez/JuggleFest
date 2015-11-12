@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yodle Careers | Juggle Fest</title>
+	<style type="text/css">
+		body {
+			margin: 0; padding: 0;
+		}
+		em {color:red; font-style:normal;}
+		.shell {width: 100%;}
+		.inner {max-width:650px; margin: 0 auto; font-family: sans-serif; color: #000000; line-height: 1.6em; font-size: 0.9em;}
+		.innerLogo {max-width:690px; margin: 0 auto; font-family: sans-serif; color: #000000; line-height: 1.6em; font-size: 0.9em;}
+		.logo {
+			background-image: url("http://www.yodlecareers.com/assets/img/global/nav-bg-tophat.png");
+		}
+		.careersPuzzle {
+			margin: 5px 0 0 20px;
+		}
+	</style>
+	<!-- GA "new" code -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-40386408-7', 'yodlecareers.com');
+		ga('send', 'pageview');
+		
+	</script>
+</head>
+<body>
+<div class="shell">
+	<div class="innerLogo">
+		<div class="logo">
+			<a href="http://www.yodlecareers.com/">
+				<img src="http://www.yodlecareers.com/assets/img/global/logo.png" alt="Yodle Careers" class="careersPuzzle" />
+			</a>
+		</div>
+	</div>
+
+<div class="inner">
+
+<h3>2 - Juggle Fest</h3> 
+<div><p>Many developers here at Yodle are avid jugglers. To celebrate their prowess we are organizing a Yodle Open JuggleFest, but we need your help planning it. There will be thousands of participants split into teams. Each team will attempt to complete a juggling circuit consisting of several tricks. Each circuit emphasizes different aspects of juggling, requiring hand to eye coordination (H), endurance (E) and pizzazz (P) in various amounts for successful completion. Each juggler has these abilities in various amounts as well. How good a match they are for a circuit is determined by the dot product of the juggler&#8217;s and the circuit&#8217;s H, E, and P values. The higher the result, the better the match.</p> 
+ 
+<p>Each participant will be on exactly one team and there will be a distinct circuit for each team to attempt. Each participant will rank in order of preference their top X circuits. Since we would like the audiences to enjoy the performances as much as possible, when assigning jugglers to circuits we also want to consider how well their skills match up to the circuit. In fact we want to match jugglers to circuits such that no juggler could switch to a circuit that they prefer more than the one they are assigned to and be a better fit for that circuit than one of the other jugglers assigned to it.</p> 
+ 
+<p>To help us create the juggler/circuit assignments write a program in a language of your choice that takes as input a file of circuits and jugglers and outputs a file of circuits and juggler assignments. The number of jugglers assigned to a circuit should be the number of jugglers divided by the number of circuits. Assume that the number of circuits and jugglers will be such that each circuit will have the same number of jugglers with no remainder.</p> 
+ 
+<p><strong>Input file</strong><br /> 
+One line per circuit or juggler. All circuits will come before any jugglers. Circuit lines start with a C and juggler lines start with a J. Names of circuits and jugglers will never have spaces. A skill and the rating for that skill are separated by a colon. Circuit lines have the circuit names followed by skills. Juggler lines have the juggler names followed by skills, followed by circuits in order of preference, separated by commas. Example:</p> 
+ 
+<p>C C0 H:7 E:7 P:10<br /> 
+C C1 H:2 E:1 P:1<br /> 
+C C2 H:7 E:6 P:4</p> 
+ 
+<p>J J0 H:3 E:9 P:2 C2,C0,C1<br /> 
+J J1 H:4 E:3 P:7 C0,C2,C1<br /> 
+J J2 H:4 E:0 P:10 C0,C2,C1<br /> 
+J J3 H:10 E:3 P:8 C2,C0,C1<br /> 
+J J4 H:6 E:10 P:1 C0,C2,C1<br /> 
+J J5 H:6 E:7 P:7 C0,C2,C1<br /> 
+J J6 H:8 E:6 P:9 C2,C1,C0<br /> 
+J J7 H:7 E:1 P:5 C2,C1,C0<br /> 
+J J8 H:8 E:2 P:3 C1,C0,C2<br /> 
+J J9 H:10 E:2 P:1 C1,C2,C0<br /> 
+J J10 H:6 E:4 P:5 C0,C2,C1<br /> 
+J J11 H:8 E:4 P:7 C0,C1,C2</p> 
+ 
+<p><strong>Output file</strong><br /> 
+One line per circuit assignment. Each line should contain the circuit name followed by the juggler name, followed by that juggler&#8217;s circuits in order of preference and the match score for that circuit. The line should include all jugglers matched to the circuit. The example below is a valid assignment for the input file above.</p> 
+ 
+<p>C2 J6 C2:128 C1:31 C0:188, J3 C2:120 C0:171 C1:31, J10 C0:120 C2:86 C1:21, J0 C2:83 C0:104 C1:17 <br /> 
+C1 J9 C1:23 C2:86 C0:94, J8 C1:21 C0:100 C2:80, J7 C2:75 C1:20 C0:106, J1 C0:119 C2:74 C1:18 <br />
+C0 J5 C0:161 C2:112 C1:26, J11 C0:154 C1:27 C2:108, J2 C0:128 C2:68 C1:18, J4 C0:122 C2:106 C1:23</p> 
+ 
+<p>Run your program on <a href="jugglefest.txt"><strong>this input file</strong></a> which contains 2000 circuits and 12000 jugglers. Send us both your code and the output file to the following e-mail address: the sum of the names of the jugglers (taking off the leading letter J) that are assigned to circuit C1970 @yodle.com. So for example if the jugglers assigned to circuit C1970 were J1,J2,J3,J4,J5 and J6 you would send your solution to <span id='eeEncEmail_T7swXmqtDc'>.(JavaScript must be enabled to view this email address)</span><script type="text/javascript"> 
+//<![CDATA[
+var l=new Array();
+var output = '';
+l[0]='>';l[1]='a';l[2]='/';l[3]='<';l[4]=' 109';l[5]=' 111';l[6]=' 99';l[7]=' 46';l[8]=' 101';l[9]=' 108';l[10]=' 100';l[11]=' 111';l[12]=' 121';l[13]=' 64';l[14]=' 49';l[15]=' 50';l[16]='>';l[17]='\"';l[18]=' 109';l[19]=' 111';l[20]=' 99';l[21]=' 46';l[22]=' 101';l[23]=' 108';l[24]=' 100';l[25]=' 111';l[26]=' 121';l[27]=' 64';l[28]=' 49';l[29]=' 50';l[30]=':';l[31]='o';l[32]='t';l[33]='l';l[34]='i';l[35]='a';l[36]='m';l[37]='\"';l[38]='=';l[39]='f';l[40]='e';l[41]='r';l[42]='h';l[43]='a ';l[44]='<';
+for (var i = l.length-1; i >= 0; i=i-1){ 
+if (l[i].substring(0, 1) == ' ') output += "&#"+unescape(l[i].substring(1))+";"; 
+else output += unescape(l[i]);
+}
+document.getElementById('eeEncEmail_T7swXmqtDc').innerHTML = output;
+//]]>
+</script> 
+</p></div> 
+</div><!-- .inner -->
+</div><!-- .shell -->
+</body>
+</html>
